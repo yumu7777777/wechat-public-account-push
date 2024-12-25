@@ -166,13 +166,13 @@ export const sendMessage = async (accessToken, user, params) => {
     const data = {
         "touser": user,
         "template_id": config.TEMPLATE_ID,
-        "url": "http://weixin.qq.com/download",
+        // "url": "http://weixin.qq.com/download",
         "topcolor": "#FF0000",
-        "miniprogram": {
-            "appid": "wx8382f2d0ab4a08eb", 
-            "pagepath": "pages/index/index", 
-            "title": "home" 
-          },
+        // "miniprogram": {
+        //     "appid": "wx8382f2d0ab4a08eb", 
+        //     "pagepath": "pages/index/index", 
+        //     "title": "home" 
+        //   },
         "data": wxTemplateData
     }
 
