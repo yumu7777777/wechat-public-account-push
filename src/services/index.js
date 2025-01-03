@@ -95,7 +95,7 @@ export const getCIBA = async () => {
          const match = res.data.match(/<p>(.*?)<\/p>/);
           if (match && match[1]) {
             console.log('P 标签中的文字:', match[1]);
-            return { content: match[1] , note: '--'}
+            return { content: '--' , note: match[1]}
           } else {
             console.log('未找到 <p> 标签');
                return { content:'--' , note: '--'}
