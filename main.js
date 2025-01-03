@@ -52,8 +52,8 @@ const main = async () => {
         { name: toLowerLine('birthdayMessage'), value: birthdayMessage, color: getColor() },
         // { name: toLowerLine('noteEn'), value: noteEn, color: getColor() },
         // { name: toLowerLine('noteCh'), value: noteCh, color: getColor() },
-        { name: toLowerLine('noteEn'), value: oneTalk, color: getColor() },
-        { name: toLowerLine('noteCh'), value: talkFrom, color: getColor() },
+        { name: toLowerLine('noteEn'), value: talkFrom, color: getColor() },
+        { name: toLowerLine('noteCh'), value: oneTalk, color: getColor() },
         { name: toLowerLine('oneTalk'), value: oneTalk, color: getColor() },
         { name: toLowerLine('talkFrom'), value: talkFrom, color: getColor() },
     ]
