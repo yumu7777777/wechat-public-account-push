@@ -92,12 +92,15 @@ export const getCIBA = async () => {
     }).catch(err => err)
 
     if (res.status === 200 && res) {
-           const parser = new DOMParser();
-           const doc = parser.parseFromString(html, 'text/html');
-    
-            // 查找第一个 <p> 标签并提取文本内容
-            const pTag = doc.querySelector('p');
-        return { content: pTag , note: '--'}
+         const match = data.match(/<p>(.*?)<\/p>/);
+          if (match && match[1]) {
+            console.log('P 标签中的文字:', match[1]);
+            return { content: match[1] , note: '--'}
+          } else {
+            console.log('未找到 <p> 标签');
+               return { content:'--' , note: '--'}
+          }
+
         // return res.data
     }
     // if (res.status === 200 && res) {
