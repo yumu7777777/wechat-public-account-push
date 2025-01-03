@@ -81,7 +81,9 @@ export const getWeather = async (province, city) => {
  * @returns 
  */
 export const getCIBA = async () => {
-    const url = 'http://open.iciba.com/dsapi/'
+    // const url = 'http://open.iciba.com/dsapi/'
+    const url = 'https://v.api.aa1.cn/api/yiyan/index.php'
+    
     const res = await axios.get(url, {
         headers: {
             'Content-Type': 'application/json',
@@ -90,8 +92,12 @@ export const getCIBA = async () => {
     }).catch(err => err)
 
     if (res.status === 200 && res) {
-        return res.data
+        return { content: res.data, note: '--'}
+        // return res.data
     }
+    // if (res.status === 200 && res) {
+    //     return res.data
+    // }
     console.error('金山词霸每日一句: 发生错误', res)
     return null
 }
