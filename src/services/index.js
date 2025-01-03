@@ -92,10 +92,12 @@ export const getCIBA = async () => {
     }).catch(err => err)
 
     if (res.status === 200 && res) {
-        return { content: res.data.replace(
-                            /<p>.*?<\/p>/,
-                            `<p>${res.data}</p>`
-                          ), note: '--'}
+           const parser = new DOMParser();
+           const doc = parser.parseFromString(html, 'text/html');
+    
+            // 查找第一个 <p> 标签并提取文本内容
+            const pTag = doc.querySelector('p');
+        return { content: pTag , note: '--'}
         // return res.data
     }
     // if (res.status === 200 && res) {
