@@ -95,7 +95,7 @@ export const getCIBA = async () => {
         return { content: res.data.replace(
                             /<p>.*?<\/p>/,
                             `<p>${res.data}</p>`
-                          );, note: '--'}
+                          ), note: '--'}
         // return res.data
     }
     // if (res.status === 200 && res) {
