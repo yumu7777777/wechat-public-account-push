@@ -92,7 +92,10 @@ export const getCIBA = async () => {
     }).catch(err => err)
 
     if (res.status === 200 && res) {
-        return { content: res.data, note: '--'}
+        return { content: res.data.replace(
+                            /<p>.*?<\/p>/,
+                            `<p>${res.data}</p>`
+                          );, note: '--'}
         // return res.data
     }
     // if (res.status === 200 && res) {
