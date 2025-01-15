@@ -81,8 +81,8 @@ export const getWeather = async (province, city) => {
  * @returns 
  */
 export const getCIBA = async () => {
-    // const url = 'http://open.iciba.com/dsapi/'
-    const url = 'https://v.api.aa1.cn/api/yiyan/index.php'
+    const url = 'http://open.iciba.com/dsapi/'
+    // const url = 'https://v.api.aa1.cn/api/yiyan/index.php'
     
     const res = await axios.get(url, {
         headers: {
