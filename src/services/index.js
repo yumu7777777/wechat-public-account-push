@@ -91,21 +91,21 @@ export const getCIBA = async () => {
         }
     }).catch(err => err)
 
-    if (res.status === 200 && res) {
-         const match = res.data.match(/<p>(.*?)<\/p>/);
-          if (match && match[1]) {
-            console.log('P 标签中的文字:', match[1]);
-            return { content: '--' , note: match[1]}
-          } else {
-            console.log('未找到 <p> 标签');
-               return { content:'--' , note: '--'}
-          }
-
-        // return res.data
-    }
     // if (res.status === 200 && res) {
-    //     return res.data
+    //      const match = res.data.match(/<p>(.*?)<\/p>/);
+    //       if (match && match[1]) {
+    //         console.log('P 标签中的文字:', match[1]);
+    //         return { content: '--' , note: match[1]}
+    //       } else {
+    //         console.log('未找到 <p> 标签');
+    //            return { content:'--' , note: '--'}
+    //       }
+
+    //     // return res.data
     // }
+    if (res.status === 200 && res) {
+        return res.data
+    }
     console.error('金山词霸每日一句: 发生错误', res)
     return null
 }
